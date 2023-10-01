@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # local
+    'revenue.apps.RevenueConfig',
     'spend.apps.SpendConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,5 +1,5 @@
-from .models import Spend
+from .models import SpendStatistic
 
-class SpendStatistic():
+class SpendViews():
     pass
 

@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import SpendStatistic
+from .views import SpendViews
 
 urlpatterns = [
-	path('', SpendStatistic.as_view()),
+	path('', SpendViews.as_view()),
 ]
