@@ -9,4 +9,4 @@ class SpendStatistic(models.Model):
     conversion = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.name
+        return f'{self.name}  |  {self.date}  |  {self.spend}  |  {self.impressions}  |  {self.clicks}  |   {self.conversion}'

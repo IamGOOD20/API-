@@ -1,13 +1,13 @@
 from rest_framework import serializers
 from .models import SpendStatistic
 
+
 class SpendSerialiser(serializers.ModelSerializer):
+    # revenue_field = serializers.SerializerMethodField()
 
     class Meta:
         model = SpendStatistic
-        fields = ('date', 'revenue', 'spend', 'impressions', 'clicks', 'conversion',)
+        fields = ('date', 'spend', 'impressions', 'clicks', 'conversion',) # revenue
 
-
-        '''з поділом по дням (date) та назвою (name), 
-        з агрегованими сумами значень revenue та пов'язаними значеннями spend, 
-        impressions, clicks, conversion з моделі SpendStatistic.'''
+    # def get_revenue(self, obj):
+    #     return obj.revenue_field.revenue
