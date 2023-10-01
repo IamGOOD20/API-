@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 3 rd
+    'rest_framework',
     # local
     'revenue.apps.RevenueConfig',
     'spend.apps.SpendConfig',
