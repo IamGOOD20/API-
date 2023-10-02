@@ -1,8 +1,10 @@
 from rest_framework import generics
 from .models import RevenueStatistic
-from .serializers import RevenueSerializers
+from .serializers import RevenueStatisticSerializers
 
 
 class RevenueView(generics.ListAPIView):
+    '''display revenue data'''
+
     queryset = RevenueStatistic.objects.all()
-    serializer_class = RevenueSerializers
+    serializer_class = RevenueStatisticSerializers

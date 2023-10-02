@@ -1,13 +1,17 @@
 from rest_framework import serializers
+from revenue.models import RevenueStatistic
 from .models import SpendStatistic
 
+class RevueSerialiser(serializers.ModelSerializer):
+    '''get revenue field from revenue models'''
+    class Meta:
+        model = RevenueStatistic
+        fields = ('revenue',)
 
-class SpendSerialiser(serializers.ModelSerializer):
-    # revenue_field = serializers.SerializerMethodField()
+class SpendStatisticSerialiser(serializers.ModelSerializer):
+    '''display spend statistic'''
+    revenue = RevueSerialiser(many=True)
 
     class Meta:
         model = SpendStatistic
-        fields = ('date', 'spend', 'impressions', 'clicks', 'conversion',) # revenue
-
-    # def get_revenue(self, obj):
-    #     return obj.revenue_field.revenue
+        fields = ('date', 'name', 'spend', 'impressions', 'clicks', 'conversion', 'revenue',)

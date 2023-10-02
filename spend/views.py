@@ -1,13 +1,8 @@
 from rest_framework import generics
 from .models import SpendStatistic
-from .serializers import SpendSerialiser
+from .serializers import SpendStatisticSerialiser, RevueSerialiser
 
-
-class SpendViews(generics.ListAPIView):
-
+class SpendStatisticView(generics.ListAPIView):
+    '''display spend data'''
     queryset = SpendStatistic.objects.all()
-    serializer_class = SpendSerialiser
-
-
-
-
+    serializer_class = SpendStatisticSerialiser
